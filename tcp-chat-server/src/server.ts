@@ -5,14 +5,14 @@ const PORT = 8080;
 
 const clients: net.Socket[] = [];
 
-const server = net.createServer((socket) => {
+const server = net.createServer((socket: net.Socket) => {
     console.log('New client connected');
 
     // Add the new client to the list
     clients.push(socket);
 
     // Broadcast messages to all clients
-    socket.on('data', (data) => {
+    socket.on('data', (data: Buffer) => {
         const message = data.toString().trim();
         console.log(`Received: ${message}`);
 
@@ -42,13 +42,13 @@ const server = net.createServer((socket) => {
     });
 
     // Handle socket errors
-    socket.on('error', (err) => {
+    socket.on('error', (err: Error) => {
         console.error(`Socket error: ${err.message}`);
     });
 });
 
 // Handle server-level errors
-server.on('error', (err) => {
+server.on('error', (err: Error) => {
     console.error(`Server error: ${err.message}`);
 });
 
