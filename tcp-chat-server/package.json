@@ -1,0 +1,20 @@
+{
+  "name": "tcp-chat-server",
+  "version": "1.0.0",
+  "description": "A simple TCP chat server and client implementation.",
+  "main": "src/server.ts",
+  "scripts": {
+    "start": "node dist/server.js",
+    "build": "tsc",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "dependencies": {
+    "net": "^1.0.2"
+  },
+  "devDependencies": {
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  },
+  "author": "",
+  "license": "ISC"
+}
